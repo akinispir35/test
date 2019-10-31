@@ -33,7 +33,7 @@ namespace Kirtasiye
                  dt.Rows[i]["Guncelleme"] = "Guncelle";
                 
              }
-             html += Environment.NewLine + "<tr>";
+            html += Environment.NewLine + "<tr>";
              for (int i = 0; i < dt.Columns.Count; i++)
                  html += Environment.NewLine + "<td>" + dt.Columns[i].ColumnName + "</td>" + Environment.NewLine;
              html += Environment.NewLine + "</tr>";
