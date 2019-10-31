@@ -15,8 +15,20 @@ namespace Kirtasiye
         SqlConnection baglanti = new SqlConnection("Server=192.168.1.200;user id=akin;Password=akin;Database=AKIN;");
         protected void Page_Load(object sender, EventArgs e)
         {
+            SehirDropDownunuDoldur();
+            MusteriyeAitSehriDropdownIcindenSeciliDurumaGetir();
+
+        }
+
+        public void MusteriyeAitSehriDropdownIcindenSeciliDurumaGetir()
+        {
+            //acaba burda napıcaz???
+        }
+        public void SehirDropDownunuDoldur()
+        {
+
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("Select * From Sehir",baglanti);
+            SqlCommand komut = new SqlCommand("Select * From Sehir", baglanti);
 
             //SqlDataAdapter da = new SqlDataAdapter();
             //da.SelectCommand = komut;
@@ -29,7 +41,6 @@ namespace Kirtasiye
             DropDownList1.DataValueField = "SehirId";
             DropDownList1.DataTextField = "SehirAd";
             DropDownList1.DataBind();
-
 
         }
     }
