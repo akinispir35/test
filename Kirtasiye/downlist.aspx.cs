@@ -43,6 +43,8 @@ namespace Kirtasiye
                 }
                 //benim sorunum şuanda sehir idleri nerede ve nasıl birleştirecegim şuanda çalıştırdıgımda otomatik olarak
                 // ilk sıradaki şehri gösteriyor bir atama yapılmadıgından dolayı. o atamayı yapamadım.
+                //Baran:burada okuduğun şeyi direk kontrollere basmışsın halbuki bir .net datatable içerisine doldurman gerekirdi
+                //elinde bir datatable olursa onun satırları ve kolonları üzerinde çalışarak istediğin kontrole istediğin şeyi koyabilirsin
             }
         }
             public void SehirDropDownunuDoldur()
