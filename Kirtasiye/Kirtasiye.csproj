@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="downlist.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Musteri.aspx" />
     <Content Include="MusteriGuncelle.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="downlist.aspx.cs">
+      <DependentUpon>downlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="downlist.aspx.designer.cs">
+      <DependentUpon>downlist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
