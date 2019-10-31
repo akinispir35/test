@@ -15,33 +15,48 @@ namespace Kirtasiye
         SqlConnection baglanti = new SqlConnection("Server=192.168.1.200;user id=akin;Password=akin;Database=AKIN;");
         protected void Page_Load(object sender, EventArgs e)
         {
-            SehirDropDownunuDoldur();
             MusteriyeAitSehriDropdownIcindenSeciliDurumaGetir();
+            SehirDropDownunuDoldur();
 
         }
 
         public void MusteriyeAitSehriDropdownIcindenSeciliDurumaGetir()
         {
-            //acaba burda napıcaz???
+            Label1.Text = Request.QueryString["id"];
+            string querystr = Label1.Text;
+            if (!Page.IsPostBack)
+            {
+                baglanti.Open();
+                SqlCommand sorgu = new SqlCommand("Select * from Musteri where MusteriId='" + querystr +
+                     "'", baglanti);
+                
+
+                SqlDataReader dr = sorgu.ExecuteReader();
+                Convert.ToInt32(querystr);
+                
+                if (dr.Read())
+                {
+                    Label1.Text = dr["SehirId"].ToString();
+                    MusteriAd.Text = dr["MusteriAd"].ToString();
+                    MusteriTip.Text = dr["MusteriTipi"].ToString();
+                    baglanti.Close();
+                }
+
+            }
         }
-        public void SehirDropDownunuDoldur()
-        {
+            public void SehirDropDownunuDoldur()
+            {
 
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("Select * From Sehir", baglanti);
-
-            //SqlDataAdapter da = new SqlDataAdapter();
-            //da.SelectCommand = komut;
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //DropDownList1.DataSource = dt;
-            //DropDownList1.DataBind();
-            SqlDataReader dr = komut.ExecuteReader();
-            DropDownList1.DataSource = dr;
-            DropDownList1.DataValueField = "SehirId";
-            DropDownList1.DataTextField = "SehirAd";
-            DropDownList1.DataBind();
-
+                SqlCommand komut = new SqlCommand("Select * From Sehir", baglanti);
+             SqlDataReader    dr = komut.ExecuteReader();
+            ;
+                DropDownList1.DataSource = dr;
+                
+                DropDownList1.DataValueField = "SehirId";
+                DropDownList1.DataTextField = "SehirAd";
+                DropDownList1.DataBind();
+            
+            }
         }
     }
-}

@@ -45,7 +45,7 @@ namespace Kirtasiye
                 {
                     if (j == 4)
                     {
-                        html += Environment.NewLine + "<td>" + "(<a id=" + (char)34 + i + (char)34 + " href=" + (char)34 + "MusteriGuncelle.aspx?id="
+                        html += Environment.NewLine + "<td>" + "(<a id=" + (char)34 + i + (char)34 + " href=" + (char)34 + "downlist.aspx?id="
                            + dt.Rows[i][0] +
                           (char)34 + ">Guncelle</a>)" + "</td>" + Environment.NewLine;
                     }
