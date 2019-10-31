@@ -41,16 +41,17 @@ namespace Kirtasiye
                     MusteriTip.Text = dr["MusteriTipi"].ToString();
                     baglanti.Close();
                 }
-
+                //benim sorunum şuanda sehir idleri nerede ve nasıl birleştirecegim şuanda çalıştırdıgımda otomatik olarak
+                // ilk sıradaki şehri gösteriyor bir atama yapılmadıgından dolayı. o atamayı yapamadım.
             }
         }
             public void SehirDropDownunuDoldur()
             {
 
             baglanti.Open();
-                SqlCommand komut = new SqlCommand("Select * From Sehir", baglanti);
-             SqlDataReader    dr = komut.ExecuteReader();
-            ;
+            SqlCommand komut = new SqlCommand("Select * From Sehir", baglanti);
+             SqlDataReader dr = komut.ExecuteReader();
+            
                 DropDownList1.DataSource = dr;
                 
                 DropDownList1.DataValueField = "SehirId";
